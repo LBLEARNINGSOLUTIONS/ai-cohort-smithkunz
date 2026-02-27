@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free AI Cohort | Smith, Kunz & Associates × L&B Learning Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--blue:#6b2837;--blue-light:#7d3345;--blue-bright:#8c3a4f;--blue-pale:#f5e8eb;
+--white:#ffffff;--off-white:#f7f9fc;--light-gray:#eef1f6;--mid-gray:#d0d5de;--border:#dde2ea;
+--text-dark:#1c2536;--text-mid:#4a5568;--text-light:#718096;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text-dark);overflow-x:hidden}
+html{scroll-behavior:smooth}
+a{text-decoration:none;color:inherit}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;position:relative;overflow:hidden;background:var(--blue)}
+.hero::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(ellipse at 30% 40%,rgba(52,120,198,.15) 0%,transparent 60%),
+  radial-gradient(ellipse at 70% 60%,rgba(26,61,110,.2) 0%,transparent 60%)}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent)}
+.hero-content{position:relative;z-index:2;max-width:800px}
+.hero-badge{display:inline-block;padding:.5rem 1.25rem;border:1px solid rgba(255,255,255,.2);border-radius:50px;font-size:.75rem;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:2.5rem;background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,6vw,4.2rem);font-weight:400;line-height:1.15;margin-bottom:1.5rem;color:#fff}
+.hero h1 .accent{color:var(--blue-pale)}
+.hero p{font-size:1.1rem;line-height:1.8;color:rgba(255,255,255,.6);max-width:600px;margin:0 auto 1.5rem}
+.partners{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.partners span.label{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.partners span.name{font-family:'DM Serif Display',serif;font-size:1rem;color:rgba(255,255,255,.85)}
+.partners span.divider{color:rgba(255,255,255,.25);font-size:.9rem}
+.hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:1rem 2.5rem;border-radius:50px;font-weight:600;font-size:.95rem;transition:all .3s ease;cursor:pointer;border:none;letter-spacing:.3px}
+.btn-white{background:#fff;color:var(--blue);box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.15)}
+.btn-outline{border:1.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);background:transparent;border-radius:50px}
+.btn-outline:hover{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-blue{background:var(--blue);color:#fff;box-shadow:0 4px 20px rgba(26,61,110,.3);border-radius:50px}
+.btn-blue:hover{background:var(--blue-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(26,61,110,.4)}
+.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);animation:bounce 2.5s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+.scroll-hint svg{width:20px;height:20px;stroke:rgba(255,255,255,.3)}
+
+/* Stats */
+.stats{background:var(--white);border-bottom:1px solid var(--border);padding:2.5rem 2rem}
+.stats-grid{display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;max-width:900px;margin:0 auto}
+.stat{text-align:center}
+.stat .number{font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--blue)}
+.stat .label{font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-top:.25rem}
+
+/* Sections */
+section{padding:6rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.section-label{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;text-align:center;margin-bottom:.5rem;color:var(--blue-bright);font-weight:600}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;text-align:center;color:var(--text-dark);margin-bottom:.75rem}
+.section-sub{text-align:center;color:var(--text-light);max-width:580px;margin:0 auto 3.5rem;line-height:1.8;font-size:1rem}
+.blue-line{height:2px;width:50px;background:var(--blue-bright);margin:1rem auto 1.5rem;border-radius:2px}
+
+/* Problem */
+.problem{background:var(--off-white)}
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.5rem;margin-top:2rem}
+.problem-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2.25rem;transition:all .3s ease}
+.problem-card:hover{border-color:var(--blue-bright);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.problem-icon{width:48px;height:48px;border-radius:10px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.25rem}
+.problem-card h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text-dark);margin-bottom:.5rem}
+.problem-card p{color:var(--text-light);font-size:.95rem;line-height:1.7}
+
+/* Learn */
+.learn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+.learn-item{display:flex;gap:1.25rem;align-items:flex-start}
+.learn-num{min-width:46px;height:46px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:#fff;flex-shrink:0}
+.learn-item h3{font-family:'DM Serif Display',serif;color:var(--text-dark);margin-bottom:.35rem;font-size:1.05rem}
+.learn-item p{color:var(--text-light);font-size:.9rem;line-height:1.7}
+
+/* Schedule */
+.schedule{background:var(--blue);color:#fff}
+.schedule .section-label{color:rgba(255,255,255,.5)}
+.schedule .section-title{color:#fff}
+.schedule .section-sub{color:rgba(255,255,255,.5)}
+.schedule .blue-line{background:rgba(255,255,255,.3)}
+.timeline{max-width:700px;margin:0 auto;position:relative}
+.timeline::before{content:'';position:absolute;left:22px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,.05))}
+.timeline-item{display:flex;gap:1.5rem;margin-bottom:2rem;align-items:flex-start}
+.timeline-dot{min-width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:rgba(255,255,255,.7);position:relative;z-index:2}
+.timeline-content{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:1.5rem;flex:1;transition:all .3s ease}
+.timeline-content:hover{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.08)}
+.timeline-content h3{font-family:'DM Serif Display',serif;color:#fff;margin-bottom:.25rem;font-size:1.05rem}
+.timeline-content .date{font-size:.85rem;color:rgba(255,255,255,.45);margin-bottom:.5rem;font-weight:500}
+.timeline-content p{color:rgba(255,255,255,.5);font-size:.9rem;line-height:1.7}
+
+/* Audience */
+.audience-list{max-width:650px;margin:0 auto;display:flex;flex-direction:column;gap:.75rem}
+.audience-item{display:flex;align-items:center;gap:1rem;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.15rem 1.5rem;transition:all .3s ease}
+.audience-item:hover{border-color:var(--blue-bright);box-shadow:0 4px 16px rgba(0,0,0,.04)}
+.check{width:28px;height:28px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.check svg{width:13px;height:13px;stroke:#fff;stroke-width:3}
+.audience-item p{color:var(--text-mid);font-size:.95rem}
+
+/* Sponsors */
+.sponsors{background:var(--off-white)}
+.sponsor-grid{display:flex;gap:2rem;max-width:900px;margin:0 auto;flex-wrap:wrap}
+.sponsor-card{flex:1;min-width:280px;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2.5rem;transition:all .3s ease}
+.sponsor-card:hover{border-color:var(--blue-bright);box-shadow:0 8px 30px rgba(0,0,0,.05)}
+.sponsor-card .logo-text{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--blue);margin-bottom:1rem}
+.sponsor-card p{color:var(--text-light);line-height:1.8;font-size:.95rem;margin-bottom:1rem}
+.sponsor-card .tagline{font-weight:600;color:var(--text-dark);font-size:.9rem;margin-bottom:0}
+
+/* CTA */
+.cta{text-align:center;padding:7rem 2rem;position:relative;background:var(--blue);overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(52,120,198,.12) 0%,transparent 70%)}
+.cta-content{position:relative;z-index:2}
+.cta h2{font-family:'DM Serif Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:400;color:#fff;margin-bottom:.75rem}
+.cta p{color:rgba(255,255,255,.5);font-size:1.05rem;margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto}
+.cta .details{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.cta .detail-item{display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.5);font-size:.9rem}
+.cta .detail-item svg{width:18px;height:18px;stroke:rgba(255,255,255,.4)}
+
+/* Footer */
+footer{text-align:center;padding:2rem;background:var(--off-white);border-top:1px solid var(--border);color:var(--text-light);font-size:.85rem}
+footer strong{color:var(--blue)}
+
+@media(max-width:600px){
+.hero h1{font-size:2.2rem}
+section{padding:4rem 1.25rem}
+.cta .details{flex-direction:column;align-items:center}
+.stats-grid{gap:2rem}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="hero-content">
+<div class="hero-badge">Free 6-Session AI Cohort</div>
+<h1>Actionable AI Knowledge<br>for <span class="accent">Your Business</span></h1>
+<p>A free, hands-on AI cohort designed for professionals and business owners who want practical skills they can apply immediately — no tech background required.</p>
+<div class="partners">
+<span class="label">Presented by</span>
+<span class="name">Smith, Kunz &amp; Associates</span>
+<span class="divider">in partnership with</span>
+<span class="name">L&amp;B Learning Solutions</span>
+</div>
+<div class="hero-buttons">
+<a href="https://forms.gle/auQLW9BeMyiTj9Yr8" target="_blank" class="btn btn-white">Reserve Your Seat</a>
+<button onclick="document.getElementById('learn').scrollIntoView({behavior:'smooth'})" class="btn btn-outline">Explore the Program</button>
+</div>
+</div>
+<div class="scroll-hint">
+<svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+</div>
+</section>
+
+<div class="stats">
+<div class="stats-grid">
+<div class="stat"><div class="number">6</div><div class="label">Sessions</div></div>
+<div class="stat"><div class="number">100%</div><div class="label">Free</div></div>
+<div class="stat"><div class="number">0</div><div class="label">Tech Skills Required</div></div>
+<div class="stat"><div class="number" style="font-size:2rem">&#9998;</div><div class="label">Hands-On Learning</div></div>
+</div>
+</div>
+
+<section class="problem">
+<div class="container">
+<p class="section-label">The Challenge</p>
+<h2 class="section-title">AI Is Reshaping Every Industry</h2>
+<div class="blue-line"></div>
+<p class="section-sub">From accounting and tax services to business consulting and beyond — AI is changing how professionals work. The businesses that adapt now will lead tomorrow.</p>
+<div class="problem-grid">
+<div class="problem-card">
+<div class="problem-icon">&#128200;</div>
+<h3>Your Peers Are Already Moving</h3>
+<p>Firms and businesses across Idaho are adopting AI to work faster, serve clients better, and reduce overhead. The window to catch up is narrowing.</p>
+</div>
+<div class="problem-card">
+<div class="problem-icon">&#9200;</div>
+<h3>No Time to Learn It Alone</h3>
+<p>Between client work, deadlines, and day-to-day operations — there's no room to sift through tutorials and figure out AI on your own.</p>
+</div>
+<div class="problem-card">
+<div class="problem-icon">&#127919;</div>
+<h3>You Need Practical, Not Theoretical</h3>
+<p>You don't need a lecture on algorithms. You need to know which AI tools can help your business this month.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="learn">
+<div class="container">
+<p class="section-label">The Program</p>
+<h2 class="section-title">What You'll Walk Away With</h2>
+<div class="blue-line"></div>
+<p class="section-sub">Six sessions designed to take you from AI-curious to AI-confident — with hands-on practice, real tools, and a supportive peer environment.</p>
+<div class="learn-grid">
+<div class="learn-item">
+<div class="learn-num">01</div>
+<div>
+<h3>AI Fundamentals, Demystified</h3>
+<p>Cut through the noise. Understand what AI actually is, what it can do today, and where the real opportunities are for your business.</p>
+</div>
+</div>
+<div class="learn-item">
+<div class="learn-num">02</div>
+<div>
+<h3>Hands-On Tool Proficiency</h3>
+<p>Get comfortable with the leading AI tools through guided exercises — not just demos. Leave each session with skills you can use right away.</p>
+</div>
+</div>
+<div class="learn-item">
+<div class="learn-num">03</div>
+<div>
+<h3>Streamline Your Operations</h3>
+<p>Automate repetitive tasks, simplify workflows, and reclaim hours every week using AI-powered tools and systems.</p>
+</div>
+</div>
+<div class="learn-item">
+<div class="learn-num">04</div>
+<div>
+<h3>Data-Driven Decision Making</h3>
+<p>Use AI to analyze data, identify trends, and make faster, more informed decisions that drive real business results.</p>
+</div>
+</div>
+<div class="learn-item">
+<div class="learn-num">05</div>
+<div>
+<h3>AI-Powered Growth Strategies</h3>
+<p>From marketing to client acquisition, discover how AI can accelerate your growth and sharpen your competitive edge.</p>
+</div>
+</div>
+<div class="learn-item">
+<div class="learn-num">06</div>
+<div>
+<h3>A Professional Peer Network</h3>
+<p>Learn alongside other professionals and business leaders. Share insights, exchange ideas, and build connections beyond the cohort.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="schedule">
+<div class="container">
+<p class="section-label">The Schedule</p>
+<h2 class="section-title">Six Weeks to AI Confidence</h2>
+<div class="blue-line"></div>
+<p class="section-sub">Each session builds on the last, creating a clear path from AI foundations to a personalized business strategy.</p>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-dot">1</div>
+<div class="timeline-content">
+<h3>AI Demystified</h3>
+<div class="date">&#128197; Date TBA &nbsp;&#8226;&nbsp; &#128187; Google Meet</div>
+<p>What AI actually is, what it isn't, and why it matters for your business and industry right now.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot">2</div>
+<div class="timeline-content">
+<h3>Your AI Toolkit</h3>
+<div class="date">&#128197; Date TBA &nbsp;&#8226;&nbsp; &#128187; Google Meet</div>
+<p>Hands-on with the essential AI tools. You'll leave this session already applying AI in your work.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot">3</div>
+<div class="timeline-content">
+<h3>AI for Operations</h3>
+<div class="date">&#128197; Date TBA &nbsp;&#8226;&nbsp; &#128187; Google Meet</div>
+<p>Automate the busywork — emails, reporting, scheduling — so you can focus on higher-value work.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot">4</div>
+<div class="timeline-content">
+<h3>Data-Driven Decisions</h3>
+<div class="date">&#128197; Date TBA &nbsp;&#8226;&nbsp; &#128187; Google Meet</div>
+<p>Use AI to make sense of your numbers and drive smarter, faster business decisions.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot">5</div>
+<div class="timeline-content">
+<h3>AI-Powered Growth</h3>
+<div class="date">&#128197; Date TBA &nbsp;&#8226;&nbsp; &#128187; Google Meet</div>
+<p>Marketing, outreach, content strategy — learn how AI accelerates business growth at every level.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot">6</div>
+<div class="timeline-content">
+<h3>Your AI Strategy</h3>
+<div class="date">&#128197; Date TBA &nbsp;&#8226;&nbsp; &#128187; Google Meet</div>
+<p>Build a personalized AI action plan for your business. Leave with a clear, executable roadmap.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background:var(--off-white)">
+<div class="container">
+<p class="section-label">Who This Is For</p>
+<h2 class="section-title">Designed for Professionals</h2>
+<div class="blue-line"></div>
+<div class="audience-list">
+<div class="audience-item">
+<div class="check"><svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+<p>Business owners and professionals who know AI matters but haven't had time to explore it</p>
+</div>
+<div class="audience-item">
+<div class="check"><svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+<p>Anyone who wants practical, applicable skills — not academic theory</p>
+</div>
+<div class="audience-item">
+<div class="check"><svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+<p>Leaders who prefer learning in a structured, peer-driven environment</p>
+</div>
+<div class="audience-item">
+<div class="check"><svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+<p>People looking to stay ahead of the curve — no technical background needed</p>
+</div>
+<div class="audience-item">
+<div class="check"><svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+<p>Accounting, consulting, tax, and every other professional service ready for what's next</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sponsors">
+<div class="container">
+<p class="section-label">Presented By</p>
+<h2 class="section-title">Your Partners in This Journey</h2>
+<div class="blue-line"></div>
+<div class="sponsor-grid">
+<div class="sponsor-card">
+<div class="logo-text">Smith, Kunz &amp; Associates</div>
+<p>Smith, Kunz & Associates is a trusted full-service accounting firm based in Rexburg and Idaho Falls, providing expert accounting, tax, business consulting, and TPA services. They're sponsoring this cohort because they believe AI is the next frontier for the professionals and businesses they serve.</p>
+<p class="tagline">Actionable advice. Expert services.</p>
+</div>
+<div class="sponsor-card">
+<div class="logo-text">L&amp;B Learning Solutions</div>
+<p>L&amp;B Learning Solutions leads this cohort — bringing hands-on AI expertise and a commitment to making powerful technology accessible and actionable for professionals at every level.</p>
+<p class="tagline">Your guides on the AI journey.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="cta" id="register">
+<div class="cta-content">
+<h2>Ready to Get Started?</h2>
+<p>Seats are limited to ensure a personalized, high-quality experience. Secure yours today.</p>
+<div class="details">
+<div class="detail-item">
+<svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+Dates Coming Soon
+</div>
+<div class="detail-item">
+<svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+Live on Google Meet
+</div>
+<div class="detail-item">
+<svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+Complimentary
+</div>
+</div>
+<a href="https://forms.gle/auQLW9BeMyiTj9Yr8" target="_blank" class="btn btn-white" style="font-size:1.05rem;padding:1.1rem 3rem">Register Now &rarr;</a>
+<p style="margin-top:1rem;font-size:.8rem;color:rgba(255,255,255,.35)">You'll be directed to our registration page</p>
+</div>
+</section>
+
+<footer>
+<p>Presented by <strong>Smith, Kunz &amp; Associates</strong> &nbsp;&times;&nbsp; <strong>L&amp;B Learning Solutions</strong> &nbsp;|&nbsp; <a href="https://www.smithkunz.com" style="color:var(--blue-bright)">smithkunz.com</a></p>
+</footer>
+
+</body>
+</html>
